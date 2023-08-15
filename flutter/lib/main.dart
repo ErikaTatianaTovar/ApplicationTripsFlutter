@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'description_place.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,12 +29,18 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+        primarySwatch: Colors.deepOrange,
+       // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+       // useMaterial3: true,
       ),
-     home: const MyHomePage(title: 'Flutter Demo Home Page'),
-
+    home: Scaffold(
+      appBar: AppBar(
+        title: Text("Hola Mundo como estas lindo"),
+      ),
+      body: new DescriptionPlace(),
+      )
     );
+    //home: const MyHomePage(title: 'Flutter Demo Home Page'),
   }
 }
 
