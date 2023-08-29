@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'description_place.dart';
+import 'review_list.dart';
+import 'header_appbar.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+
+  String descriptionDummy = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac purus in purus lobortis tincidunt. Quisque volutpat fermentum nisl, sit amet pellentesque sapien dictum quis. Proin nec dolor eu tellus bibendum auctor eget nec turpis. Integer pharetra elementum mi, ac congue nisl vulputate id. Nulla id augue eget velit tristique aliquam. Fusce at dolor vitae lectus commodo venenatis. In scelerisque metus eu lorem condimentum, eu ultrices orci lacinia.";
 
   // This widget is the root of your application.
   @override
@@ -34,13 +37,19 @@ class MyApp extends StatelessWidget {
        // useMaterial3: true,
       ),
     home: Scaffold(
-      appBar: AppBar(
-        title: Text("Hola Mundo como estas lindo"),
-      ),
-      body: new DescriptionPlace(),
+      body: Stack(
+          children: <Widget>[
+            ListView(
+                children: <Widget>[
+                  DescriptionPlace("Bahamas", 0 , descriptionDummy),
+                  ReviewList(),
+                ],
+            ),
+            HeaderAppBar()
+          ],
       )
+      ),
     );
-    //home: const MyHomePage(title: 'Flutter Demo Home Page'),
   }
 }
 

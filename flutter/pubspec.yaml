@@ -88,3 +88,21 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+  assets:
+     - assets/img/person.jpeg
+     - assets/img/perfil1.jpeg
+     - assets/img/perfil2.jpeg
+     - assets/img/perfil3.jpeg
+     - assets/img/perfil4.jpeg
+     - assets/img/arbol.jpeg
+     - assets/img/lago.jpeg
+     - assets/img/montaña.jpeg
+     - assets/img/muelle.jpeg
+     - assets/img/rio.jpeg
+     - assets/img/selva.jpeg
+
+
+  fonts:
+     - family: Lato
+       fonts:
+         - asset: fonts/Lato-Regular.ttf
