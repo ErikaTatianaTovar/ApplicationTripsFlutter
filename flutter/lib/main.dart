@@ -1,7 +1,6 @@
+import 'package:application/flutter_trips_cupertino.dart';
 import 'package:flutter/material.dart';
-import 'description_place.dart';
-import 'review_list.dart';
-import 'header_appbar.dart';
+import 'flutter_application_trips.dart';
 
 void main() {
   runApp( MyApp());
@@ -37,17 +36,7 @@ class MyApp extends StatelessWidget {
        // useMaterial3: true,
       ),
     home: Scaffold(
-      body: Stack(
-          children: <Widget>[
-            ListView(
-                children: <Widget>[
-                  DescriptionPlace("Bahamas", 0 , descriptionDummy),
-                  ReviewList(),
-                ],
-            ),
-            HeaderAppBar()
-          ],
-      )
+      body: FlutterTripsCupertino()
       ),
     );
   }

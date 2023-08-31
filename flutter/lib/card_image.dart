@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'floating_action_button_green.dart';
 
 class CardImage extends StatelessWidget {
 
@@ -20,7 +21,7 @@ class CardImage extends StatelessWidget {
               fit: BoxFit.cover,
               image: AssetImage(pathImage)
           ),
-        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        borderRadius: const BorderRadius.all(Radius.circular(10.0)),
           shape: BoxShape.rectangle,
         boxShadow: const <BoxShadow>[
           BoxShadow(
@@ -31,6 +32,12 @@ class CardImage extends StatelessWidget {
         ]
       ),
     );
-        return card;
+        return Stack(
+          alignment: const Alignment(0.9, 1.1),
+          children: <Widget>[
+            card,
+            FloatingActionButtonGreen()
+          ],
+        );
   }
 }
