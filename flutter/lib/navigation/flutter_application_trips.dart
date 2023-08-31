@@ -1,4 +1,3 @@
-import 'package:application/home_trips.dart';
 import 'package:flutter/material.dart';
 import 'search_trips.dart';
 import 'profile_trips.dart';
@@ -7,7 +6,6 @@ import 'home_trips.dart';
 class FlutterApplicationTrips extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
-    // TODO: implement createState
     return _FlutterApplication();
   }
 }

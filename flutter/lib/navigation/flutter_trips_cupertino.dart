@@ -1,9 +1,9 @@
-import 'package:application/profile_trips.dart';
-import 'package:application/search_trips.dart';
+import 'package:application/navigation/profile_trips.dart';
+import 'package:application/navigation/search_trips.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/cupertino.dart';
-
 import 'home_trips.dart';
+
 class FlutterTripsCupertino extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

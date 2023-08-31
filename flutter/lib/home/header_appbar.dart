@@ -1,4 +1,4 @@
-import 'package:application/card_image_list.dart';
+import 'package:application/home/card_image_list.dart';
 import 'package:flutter/material.dart';
 import 'gradient_back.dart';
 import 'card_image_list.dart';

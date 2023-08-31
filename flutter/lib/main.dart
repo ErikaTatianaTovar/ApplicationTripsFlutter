@@ -1,6 +1,6 @@
-import 'package:application/flutter_trips_cupertino.dart';
+import 'package:application/navigation/flutter_trips_cupertino.dart';
 import 'package:flutter/material.dart';
-import 'flutter_application_trips.dart';
+import 'navigation/flutter_application_trips.dart';
 
 void main() {
   runApp( MyApp());

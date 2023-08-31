@@ -100,6 +100,7 @@ flutter:
      - assets/img/muelle.jpeg
      - assets/img/rio.jpeg
      - assets/img/selva.jpeg
+     - assets/img/profile.jpg
 
 
   fonts:
