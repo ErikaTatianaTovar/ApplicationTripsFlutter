@@ -15,7 +15,7 @@ class CardImageProfile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final card = Container(
-      margin: const EdgeInsets.only(top: 50.0, left: 10.0),
+      margin: const EdgeInsets.only(top: 50.0, left: 10.0, bottom: 10),
       height: 240.0,
       width: 385.0,
       decoration: BoxDecoration(

@@ -40,7 +40,7 @@ class GradientBackProfile extends StatelessWidget {
     );
 
     final gradient = Container(
-      height: 275.0,
+      height: 300.0,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [

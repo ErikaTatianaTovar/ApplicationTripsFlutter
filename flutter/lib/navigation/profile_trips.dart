@@ -18,7 +18,10 @@ class ProfileTrips extends StatelessWidget {
           SliverList(
             delegate: SliverChildListDelegate(
               [
-                CardImageListProfile(),
+                Padding(
+                padding: EdgeInsets.only(bottom: 100),
+                child: CardImageListProfile(),
+                ),
               ],
             ),
           ),
