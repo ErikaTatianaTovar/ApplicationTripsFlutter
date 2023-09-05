@@ -9,7 +9,6 @@ class InformationProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final photoProfile = Container(
       margin: const EdgeInsets.only(top: 20.0, left: 30.0),
       width: 90.0,
@@ -31,26 +30,23 @@ class InformationProfile extends StatelessWidget {
       child: Text(
         name,
         textAlign: TextAlign.left,
-        style: const TextStyle(fontFamily: "Lato", fontSize: 17.0, color: Colors.white),
+        style: const TextStyle(
+            fontFamily: "Lato", fontSize: 17.0, color: Colors.white),
       ),
     );
 
     final userEmail = Container(
-          margin: const EdgeInsets.only(left: 17.0),
-          child: Text(
-              email,
-              style: const TextStyle(fontFamily: "Lato", fontSize: 13.0, color: Color(0xFFa3a5a7)),
-              textAlign: TextAlign.left
-          ),
-        );
+      margin: const EdgeInsets.only(left: 17.0),
+      child: Text(email,
+          style: const TextStyle(
+              fontFamily: "Lato", fontSize: 13.0, color: Color(0xFFa3a5a7)),
+          textAlign: TextAlign.left),
+    );
 
     final userDetailsProfile = Expanded(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          userName,
-          userEmail
-        ],
+        children: <Widget>[userName, userEmail],
       ),
     );
 

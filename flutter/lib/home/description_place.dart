@@ -8,8 +8,7 @@ class DescriptionPlace extends StatelessWidget {
 
   DescriptionPlace(this.namePlace, this.stars, this.descriptionPlace);
 
-  String descriptionDummy =
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc ac purus in purus lobortis tincidunt. Quisque volutpat fermentum nisl, sit amet pellentesque sapien dictum quis. Proin nec dolor eu tellus bibendum auctor eget nec turpis. Integer pharetra elementum mi, ac congue nisl vulputate id. Nulla id augue eget velit tristique aliquam. Fusce at dolor vitae lectus commodo venenatis. In scelerisque metus eu lorem condimentum, eu ultrices orci lacinia.";
+  String descriptionDummy = "";
 
   @override
   Widget build(BuildContext context) {
@@ -53,8 +52,7 @@ class DescriptionPlace extends StatelessWidget {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        titleStars, description, Button("Navigate")],
+      children: <Widget>[titleStars, description, Button("Navigate")],
     );
   }
 }

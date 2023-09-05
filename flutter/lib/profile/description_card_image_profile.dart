@@ -12,9 +12,8 @@ class DescriptionCardImageProfile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final namePlace = Container(
-      margin: const EdgeInsets.only(top: 10.0 ,left: 20.0),
+      margin: const EdgeInsets.only(top: 10.0, left: 20.0),
       child: Text(
         name,
         textAlign: TextAlign.left,
@@ -27,7 +26,7 @@ class DescriptionCardImageProfile extends StatelessWidget {
     );
 
     final descriptionPlace = Container(
-      margin: const EdgeInsets.only(top: 10.0 , left: 20.0),
+      margin: const EdgeInsets.only(top: 10.0, left: 20.0),
       child: Text(description,
           style: const TextStyle(
               fontFamily: "Lato", fontSize: 12.0, color: Color(0xFFa3a5a7)),
@@ -43,7 +42,7 @@ class DescriptionCardImageProfile extends StatelessWidget {
     );
 
     final steps = Container(
-      margin: const EdgeInsets.only(top: 10.0 , left: 20.0, bottom: 10.0),
+      margin: const EdgeInsets.only(top: 10.0, left: 20.0, bottom: 10.0),
       child: Text(detailSteps,
           style: const TextStyle(
               fontFamily: "Lato",
@@ -59,15 +58,14 @@ class DescriptionCardImageProfile extends StatelessWidget {
         height: 115.0,
         width: 295.0,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20.0),
-          color: Colors.white,
+            borderRadius: BorderRadius.circular(20.0),
+            color: Colors.white,
             boxShadow: const <BoxShadow>[
               BoxShadow(
                   color: Colors.black26,
                   blurRadius: 15.0,
                   offset: Offset(0.0, 7.0))
-            ]
-        ),
+            ]),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[namePlace, descriptionPlace, categoryPlace, steps],
@@ -77,10 +75,7 @@ class DescriptionCardImageProfile extends StatelessWidget {
 
     final informationPlaceWithButton = Stack(
       alignment: const Alignment(0.7, 1.05),
-      children: <Widget>[
-        boxInformationPlace,
-        FloatingActionButtonCardview()
-      ],
+      children: <Widget>[boxInformationPlace, FloatingActionButtonCardview()],
     );
     return informationPlaceWithButton;
   }

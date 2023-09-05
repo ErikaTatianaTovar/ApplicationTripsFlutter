@@ -1,14 +1,29 @@
 import 'package:application/profile/header_appbar_profile.dart';
 import 'package:flutter/material.dart';
 
-class ProfileTrips extends StatelessWidget {
+import '../profile/card_image_list_profile.dart';
 
+class ProfileTrips extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        HeaderAppBarProfile()
-      ],
+    return Scaffold(
+      body: CustomScrollView(
+        slivers: <Widget>[
+          SliverAppBar(
+            expandedHeight: 270.0,
+            flexibleSpace: FlexibleSpaceBar(
+              background: HeaderAppBarProfile(),
+            ),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                CardImageListProfile(),
+              ],
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

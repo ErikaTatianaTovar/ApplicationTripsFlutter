@@ -3,22 +3,21 @@ import 'package:flutter/material.dart';
 import 'description_card_image_profile.dart';
 
 class CardImageProfile extends StatelessWidget {
-  String pathImage = "assets/img/lago.jpeg";
-  String name = "Knuckles Mountains Range";
-  String description = "Hiking. Water fall hunting. Natural bath";
-  String category ="Scenery & Photography";
-  String detailSteps = "Steps    123,123,123";
+  String pathImage = "";
+  String name = "";
+  String description = "";
+  String category = "";
+  String detailSteps = "";
 
-  CardImageProfile(this.pathImage);
+  CardImageProfile(this.pathImage, this.name, this.description, this.category,
+      this.detailSteps);
 
   @override
   Widget build(BuildContext context) {
-
     final card = Container(
+      margin: const EdgeInsets.only(top: 50.0, left: 10.0),
       height: 240.0,
       width: 385.0,
-      alignment: Alignment.topCenter,
-      margin: const EdgeInsets.only(top: 290.0, left: 15.0),
       decoration: BoxDecoration(
           image:
               DecorationImage(fit: BoxFit.cover, image: AssetImage(pathImage)),

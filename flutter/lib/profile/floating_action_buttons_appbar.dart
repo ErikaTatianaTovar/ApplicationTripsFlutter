@@ -58,7 +58,6 @@ class _FloatingActionButtonsAppBar extends State<FloatingActionButtonsAppBar> {
           size: 50.0,
         ),
       ),
-
     );
 
     final iconEmail = Container(
@@ -76,7 +75,7 @@ class _FloatingActionButtonsAppBar extends State<FloatingActionButtonsAppBar> {
     );
 
     final iconPerson = Container(
-      margin: const EdgeInsets.only(top: 0.0,left: 30.0, right: 1.0),
+      margin: const EdgeInsets.only(top: 0.0, left: 30.0, right: 1.0),
       child: FloatingActionButton(
         backgroundColor: Color(0xFFFFFFFF),
         mini: true,

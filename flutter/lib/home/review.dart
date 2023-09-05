@@ -12,17 +12,17 @@ class Review extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final photo = Container(
       margin: const EdgeInsets.only(top: 20.0, left: 20.0),
       width: 80.0,
       height: 80.0,
       decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          image: DecorationImage(
-            fit: BoxFit.cover,
-            image: AssetImage(pathImage),
-          )),
+        shape: BoxShape.circle,
+        image: DecorationImage(
+          fit: BoxFit.cover,
+          image: AssetImage(pathImage),
+        ),
+      ),
     );
 
     final userName = Container(
@@ -38,13 +38,12 @@ class Review extends StatelessWidget {
       children: <Widget>[
         Container(
           margin: const EdgeInsets.only(left: 17.0),
-          child: Text(
-            details,
-            style: const TextStyle(fontFamily: "Lato", fontSize: 13.0, color: Color(0xFFa3a5a7)),
-            textAlign: TextAlign.left
-          ),
+          child: Text(details,
+              style: const TextStyle(
+                  fontFamily: "Lato", fontSize: 13.0, color: Color(0xFFa3a5a7)),
+              textAlign: TextAlign.left),
         ),
-            StarsRow (4)
+        StarsRow(4)
       ],
     );
 
@@ -53,9 +52,10 @@ class Review extends StatelessWidget {
       child: Text(
         comment,
         textAlign: TextAlign.left,
-        style: const TextStyle(fontFamily: "Lato", fontSize: 13.0, fontWeight: FontWeight.w900),
-         ),
-       );
+        style: const TextStyle(
+            fontFamily: "Lato", fontSize: 13.0, fontWeight: FontWeight.w900),
+      ),
+    );
 
     final userDetails = Expanded(
       child: Column(
@@ -71,6 +71,5 @@ class Review extends StatelessWidget {
     return Row(
       children: <Widget>[photo, userDetails],
     );
-    throw UnimplementedError();
   }
 }

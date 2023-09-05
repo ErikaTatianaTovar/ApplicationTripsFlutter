@@ -40,7 +40,7 @@ class GradientBackProfile extends StatelessWidget {
     );
 
     final gradient = Container(
-      height: 400.0,
+      height: 275.0,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -68,7 +68,7 @@ class GradientBackProfile extends StatelessWidget {
         Column(crossAxisAlignment: CrossAxisAlignment.start, children: <Widget>[
       titleWidget,
       InformationProfile(pathImage, name, email),
-      FloatingActionButtonsAppBar()
+      FloatingActionButtonsAppBar(),
     ]);
 
     return Stack(

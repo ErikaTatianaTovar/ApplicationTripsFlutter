@@ -11,7 +11,7 @@ class StarsRow extends StatelessWidget {
     for (int i = 0; i < stars; i++) {
       starWidgets.add(
         Container(
-          margin: const EdgeInsets.only(top:0, right: 0),
+          margin: const EdgeInsets.only(top: 0, right: 0),
           child: const Icon(
             Icons.star,
             color: Color(0xFFf2c611),

@@ -36,10 +36,10 @@ class _FlutterApplication extends State<FlutterApplicationTrips> {
             showSelectedLabels: false,
             showUnselectedLabels: false,
             items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
-        ]),
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: ""),
+              BottomNavigationBarItem(icon: Icon(Icons.search), label: ""),
+              BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
+            ]),
       ),
     );
   }
