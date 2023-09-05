@@ -31,7 +31,7 @@ class _FloatingActionButtonsAppBar extends State<FloatingActionButtonsAppBar> {
     );
 
     final iconTv = Container(
-      margin: const EdgeInsets.only(top: 0.0, left: 30.0),
+      margin: const EdgeInsets.only(top: 0.0, left: 40.0),
       child: FloatingActionButton(
         backgroundColor: Color(0xFFFFFFFF),
         mini: true,
@@ -44,9 +44,9 @@ class _FloatingActionButtonsAppBar extends State<FloatingActionButtonsAppBar> {
       ),
     );
     final iconAdd = Container(
-      margin: const EdgeInsets.only(top: 5.0, left: 30.0),
-      width: 80.0,
-      height: 80.0,
+      margin: const EdgeInsets.only(top: 5.0, left: 40.0),
+      width: 55.0,
+      height: 55.0,
       child: FloatingActionButton(
         backgroundColor: Color(0xFFFFFFFF),
         mini: true,
@@ -55,13 +55,14 @@ class _FloatingActionButtonsAppBar extends State<FloatingActionButtonsAppBar> {
         child: const Icon(
           Icons.add_outlined,
           color: Color(0xFF584CD1),
-          size: 60.0,
+          size: 50.0,
         ),
       ),
+
     );
 
     final iconEmail = Container(
-      margin: const EdgeInsets.only(top: 0.0, left: 30.0),
+      margin: const EdgeInsets.only(top: 0.0, left: 40.0),
       child: FloatingActionButton(
         backgroundColor: Color(0xFFFFFFFF),
         mini: true,
@@ -75,7 +76,7 @@ class _FloatingActionButtonsAppBar extends State<FloatingActionButtonsAppBar> {
     );
 
     final iconPerson = Container(
-      margin: const EdgeInsets.only(top: 0.0,left: 25.0, right: 1.0),
+      margin: const EdgeInsets.only(top: 0.0,left: 30.0, right: 1.0),
       child: FloatingActionButton(
         backgroundColor: Color(0xFFFFFFFF),
         mini: true,

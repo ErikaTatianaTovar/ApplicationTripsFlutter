@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'button.dart';
-import 'stars.dart';
 
 class DescriptionPlace extends StatelessWidget {
   String namePlace;
@@ -15,7 +14,7 @@ class DescriptionPlace extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final star = Container(
-      margin: const EdgeInsets.only(top: 320.0, right: 3.0),
+      margin: const EdgeInsets.only(top: 380.0, right: 3.0),
       child: const Icon(
         Icons.star,
         color: Color(0xFFf2c611),
@@ -25,7 +24,7 @@ class DescriptionPlace extends StatelessWidget {
     final titleStars = Row(
       children: <Widget>[
         Container(
-          margin: const EdgeInsets.only(top: 320.0, left: 20.0, right: 20.0),
+          margin: const EdgeInsets.only(top: 380.0, left: 20.0, right: 20.0),
           child: Text(
             namePlace,
             style: const TextStyle(
@@ -54,7 +53,8 @@ class DescriptionPlace extends StatelessWidget {
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[titleStars, description, Button("Navigate")],
+      children: <Widget>[
+        titleStars, description, Button("Navigate")],
     );
   }
 }

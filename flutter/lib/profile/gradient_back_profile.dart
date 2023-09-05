@@ -2,8 +2,6 @@ import 'package:application/profile/floating_action_buttons_appbar.dart';
 import 'package:application/profile/information_profile.dart';
 import 'package:flutter/material.dart';
 
-import '../shadow.dart';
-
 class GradientBackProfile extends StatelessWidget {
   String title = "";
   String pathImage = "";
@@ -42,7 +40,7 @@ class GradientBackProfile extends StatelessWidget {
     );
 
     final gradient = Container(
-      height: 450.0,
+      height: 400.0,
       decoration: const BoxDecoration(
         gradient: LinearGradient(
           colors: [
@@ -54,8 +52,16 @@ class GradientBackProfile extends StatelessWidget {
           stops: [0.0, 0.6],
           tileMode: TileMode.clamp,
         ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black,
+            offset: Offset(6.0, -6.0),
+            blurRadius: 10.0,
+            spreadRadius: 0,
+          ),
+        ],
       ),
-      alignment: Alignment(-0.9, -0.6),
+      alignment: const Alignment(1, -2),
     );
 
     final detailsAppBar =
@@ -67,11 +73,7 @@ class GradientBackProfile extends StatelessWidget {
 
     return Stack(
       children: <Widget>[
-        Container(
-          height: 450.0,
-          decoration: buildBoxDecorationWithShadow(), // Use the function here
-          alignment: Alignment(-0.9, -0.6),
-        ),
+        gradient,
         detailsAppBar,
         iconSettings,
       ],
