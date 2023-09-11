@@ -1,4 +1,4 @@
-import 'package:application/profile/header_appbar_profile.dart';
+/*import 'package:application/profile/header_appbar_profile.dart';
 import 'package:flutter/material.dart';
 
 import '../profile/card_image_list_profile.dart';
@@ -30,3 +30,5 @@ class ProfileTrips extends StatelessWidget {
     );
   }
 }
+
+ */
