@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:application/User/model/user_data.dart';
 
 class UserInfo extends StatelessWidget {
 
-  String imgProfile;
-  String name;
-  String email;
+  UserData userData;
 
-  UserInfo(this.imgProfile, this.name, this.email);
+  UserInfo(@required this.userData);
 
   @override
   Widget build(BuildContext context) {
@@ -14,9 +13,8 @@ class UserInfo extends StatelessWidget {
     final userPhoto = Container(
       width: 90.0,
       height: 90.0,
-      margin: EdgeInsets.only(
-          right: 20.0
-      ),
+      margin: const EdgeInsets.only(right: 20.0
+     ),
       decoration: BoxDecoration(
           border: Border.all(
               color: Colors.white,
@@ -26,7 +24,7 @@ class UserInfo extends StatelessWidget {
           shape: BoxShape.circle,
           image: DecorationImage(
               fit: BoxFit.cover,
-              image: AssetImage(imgProfile)
+              image: NetworkImage(userData.photoURL)
           )
       ),
     );
@@ -35,12 +33,10 @@ class UserInfo extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Container(
-            margin: EdgeInsets.only(
-                bottom: 5.0
-            ),
+            margin: const EdgeInsets.only(bottom: 5.0),
             child: Text(
-                name,
-                style: TextStyle(
+                userData.name,
+                style: const TextStyle(
                   fontSize: 18.0,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -49,8 +45,8 @@ class UserInfo extends StatelessWidget {
             )
         ),
         Text(
-            email,
-            style: TextStyle(
+            userData.email,
+            style: const TextStyle(
                 fontSize: 15.0,
                 color: Colors.white30,
                 fontFamily: 'Lato'
@@ -60,7 +56,7 @@ class UserInfo extends StatelessWidget {
     );
 
     return Container(
-      margin: EdgeInsets.symmetric(
+      margin: const EdgeInsets.symmetric(
           vertical: 20.0,
           horizontal: 0.0
       ),

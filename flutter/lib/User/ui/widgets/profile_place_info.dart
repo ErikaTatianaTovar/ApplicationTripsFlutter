@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import '../../../Place/model/place.dart';
-import '../../../widgets/floating_action_button_green.dart';
+import 'package:application/Place/model/place.dart';
+import 'package:application/widgets/floating_action_button_green.dart';
 
 class ProfilePlaceInfo extends StatelessWidget {
-
-  Place place;
+  final Place place;
 
   ProfilePlaceInfo(this.place);
 
@@ -15,49 +14,40 @@ class ProfilePlaceInfo extends StatelessWidget {
     final place = Text(
       this.place.name,
       style: const TextStyle(
-          fontFamily: 'Lato',
-          fontSize: 20.0,
-          fontWeight: FontWeight.bold
-      ),
+          fontFamily: 'Lato', fontSize: 20.0, fontWeight: FontWeight.bold),
     );
 
     final placeInfo = Padding(
-        padding: const EdgeInsets.symmetric(
-            vertical: 10.0
-        ),
+        padding: EdgeInsets.symmetric(vertical: 10.0),
         child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                this.place.where,
+                this.place.description,
                 style: const TextStyle(
                     color: Color.fromRGBO(0, 0, 0, 0.4),
                     fontFamily: 'Lato',
                     fontSize: 12.0,
-                    fontWeight: FontWeight.bold
-                ),
+                    fontWeight: FontWeight.bold),
               ),
               Text(
-                this.place.type,
+                // Si categoria de Place no es null devuelve categoria, de lo contrario agrega "" osease espacio
+                this.place.category ?? "",
                 style: const TextStyle(
                     color: Color.fromRGBO(0, 0, 0, 0.4),
                     fontFamily: 'Lato',
                     fontSize: 12.0,
-                    fontWeight: FontWeight.bold
-                ),
+                    fontWeight: FontWeight.bold),
               )
-            ]
-        )
-    );
+            ]));
 
     final steps = Text(
-      'Steps ${this.place.steps}',
+      'Likes ${this.place.likes}',
       style: const TextStyle(
           fontFamily: 'Lato',
-          fontSize: 14.0,
+          fontSize: 12.0,
           fontWeight: FontWeight.bold,
-          color: Colors.amber
-      ),
+          color: Colors.amber),
     );
 
     final card = Container(
@@ -69,30 +59,25 @@ class ProfilePlaceInfo extends StatelessWidget {
             BoxShadow(
                 color: Colors.black38,
                 blurRadius: 10.0,
-                offset: Offset(0.0, 5.0)
-            )
-          ]
-      ),
+                offset: Offset(0.0, 5.0))
+          ]),
       child: Padding(
           padding: EdgeInsets.all(15.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              place,
-              placeInfo,
-              steps
-            ],
-          )
-      ),
+            children: <Widget>[place, placeInfo, steps],
+          )),
     );
 
     return Stack(
       alignment: Alignment(0.8, 1.25),
       children: <Widget>[
         card,
-        FloatingActionButtonGreen()
+        FloatingActionButtonGreen(
+          iconData: Icons.favorite_border_outlined,
+          onPressed: () {},
+        )
       ],
     );
   }
-
 }

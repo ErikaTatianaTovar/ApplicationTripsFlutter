@@ -1,27 +1,32 @@
 import 'package:flutter/material.dart';
-import '../../../widgets/stars.dart';
 
 class Review extends StatelessWidget {
-  String pathImage = "";
-  String name = "";
-  String details = "";
-  String comment = "";
-  int stars = 3;
+  late final String pathImage;
+  late final String name;
+  late final String details;
+  late final String comment;
 
-  Review(this.pathImage, this.name, this.details, this.comment, this.stars);
+  Review(this.pathImage, this.name, this.details, this.comment);
 
   @override
   Widget build(BuildContext context) {
-    final photo = Container(
-      margin: const EdgeInsets.only(top: 20.0, left: 20.0),
-      width: 80.0,
-      height: 80.0,
-      decoration: BoxDecoration(
-        shape: BoxShape.circle,
-        image: DecorationImage(
-          fit: BoxFit.cover,
-          image: AssetImage(pathImage),
-        ),
+    final userComment = Container(
+      margin: EdgeInsets.only(left: 20.0),
+      child: Text(
+        comment,
+        textAlign: TextAlign.left,
+        style: const TextStyle(
+            fontFamily: "Lato", fontSize: 13.0, fontWeight: FontWeight.w900),
+      ),
+    );
+
+    final userInfo = Container(
+      margin: EdgeInsets.only(left: 20.0),
+      child: Text(
+        details,
+        textAlign: TextAlign.left,
+        style: const TextStyle(
+            fontFamily: "Lato", fontSize: 13.0, color: Color(0xFFa3a5a7)),
       ),
     );
 
@@ -34,38 +39,19 @@ class Review extends StatelessWidget {
       ),
     );
 
-    final userInformation = Row(
-      children: <Widget>[
-        Container(
-          margin: const EdgeInsets.only(left: 17.0),
-          child: Text(details,
-              style: const TextStyle(
-                  fontFamily: "Lato", fontSize: 13.0, color: Color(0xFFa3a5a7)),
-              textAlign: TextAlign.left),
-        ),
-        StarsRow(4)
-      ],
+    final userDetails = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[userName, userInfo, userComment],
     );
 
-    final userComment = Container(
-      margin: const EdgeInsets.only(left: 20.0),
-      child: Text(
-        comment,
-        textAlign: TextAlign.left,
-        style: const TextStyle(
-            fontFamily: "Lato", fontSize: 13.0, fontWeight: FontWeight.w900),
-      ),
-    );
-
-    final userDetails = Expanded(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          userName,
-          userInformation,
-          userComment,
-        ],
-      ),
+    final photo = Container(
+      margin: EdgeInsets.only(top: 20.0, left: 20.0),
+      width: 80.0,
+      height: 80.0,
+      decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          image:
+          DecorationImage(fit: BoxFit.cover, image: AssetImage(pathImage))),
     );
 
     return Row(

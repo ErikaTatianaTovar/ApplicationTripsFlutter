@@ -1,39 +1,37 @@
 import 'package:flutter/material.dart';
-import '../widgets/user_info.dart';
-import '../widgets/button_bar.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:application/User/model/user_data.dart';
+import 'package:application/User/ui/widgets/button_bar.dart';
+import 'package:application/User/ui/widgets/user_info.dart';
 
 class ProfileHeader extends StatelessWidget {
+  final UserData userData;
+
+  ProfileHeader({Key? key, required this.userData});
+
   @override
   Widget build(BuildContext context) {
 
-    const title = Text(
+    final title = Text(
       'Profile',
       style: TextStyle(
           fontFamily: 'Lato',
           color: Colors.white,
           fontWeight: FontWeight.bold,
-          fontSize: 30.0
-      ),
+          fontSize: 30.0),
     );
 
     return Container(
-      margin: const EdgeInsets.only(
-          left: 20.0,
-          right: 20.0,
-          top: 50.0
-      ),
+      margin: EdgeInsets.only(left: 20.0, right: 20.0, top: 50.0),
       child: Column(
         children: <Widget>[
-          const Row(
-            children: <Widget>[
-              title
-            ],
+          Row(
+            children: <Widget>[title],
           ),
-          UserInfo('assets/img/profile.jpg', 'Veronica Ozorio','veroozorio253@gmail.com'),
+          UserInfo(userData),
           ButtonsBar()
         ],
       ),
     );
   }
-
 }

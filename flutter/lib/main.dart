@@ -1,11 +1,17 @@
 import 'package:application/User/bloc/bloc_user.dart';
+import 'package:application/User/ui/screens/sign_in_screen.dart';
 import 'package:application/flutter_trips_cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main() {
-  runApp( MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  runApp(MyApp());
 }
+
 
 class MyApp extends StatelessWidget {
 
@@ -16,7 +22,8 @@ class MyApp extends StatelessWidget {
     return BlocProvider(
         child: MaterialApp(
             title: 'Flutter Demo',
-            home: FlutterTripsCupertino()
+            //home: FlutterTripsCupertino()
+          home:SignInScreen(),
         ),
         bloc: UserBloc());
 
@@ -25,7 +32,7 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   final String title;
 

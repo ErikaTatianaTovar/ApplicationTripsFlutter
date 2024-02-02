@@ -1,23 +1,80 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:application/Place/model/place.dart';
+import 'package:application/User/bloc/bloc_user.dart';
+import 'package:application/User/model/user_data.dart';
 import 'card_image.dart';
 
-class CardImageList extends StatelessWidget {
+class CardImageList extends StatefulWidget {
+  final UserData userData;
+
+  CardImageList({Key? key, required this.userData});
+
+  @override
+  State<StatefulWidget> createState() {
+    return _CardImageList();
+  }
+}
+
+class _CardImageList extends State<CardImageList> {
+  UserBloc? userBloc;
   @override
   Widget build(BuildContext context) {
+    userBloc = BlocProvider.of(context);
+
     return Container(
-      height: 350.0,
-      child: ListView(
-        padding: const EdgeInsets.all(25.0),
+      //margin: EdgeInsets.only(top: 10.0),
+        height: 350.0,
+        child: StreamBuilder(
+            stream: userBloc!.placesStream,
+            builder:
+                (BuildContext context, AsyncSnapshot<QuerySnapshot> snapshot) {
+              switch (snapshot.connectionState) {
+                case ConnectionState.none:
+                  return CircularProgressIndicator();
+                case ConnectionState.waiting:
+                  return CircularProgressIndicator();
+                case ConnectionState.active:
+                  return listViewPlaces(
+                      userBloc!.buildPlaces(snapshot.data!.docs, widget.userData));
+                case ConnectionState.done:
+                  return listViewPlaces(
+                      userBloc!.buildPlaces(snapshot.data!.docs, widget.userData));
+              }
+            }));
+  }
+
+  Widget listViewPlaces(List<Place> places) {
+    //Metodo para desencadenar las acciones al dar like o dislike con el boton del Heart
+    void setLiked(Place place) {
+      setState(() {
+        place.liked = !place.liked;
+        userBloc!.likePlace(place, widget.userData.userId!);
+        place.likes = place.liked ? place.likes + 1 : place.likes - 1;
+        userBloc!.placeSelectedSink.add(place);
+      });
+    }
+
+    IconData iconDataLiked = Icons.favorite;
+    IconData iconDataLike = Icons.favorite_border;
+    return ListView(
+        padding: EdgeInsets.all(25.0),
         scrollDirection: Axis.horizontal,
-        children: <Widget>[
-          CardImage("assets/img/lago.jpeg"),
-          CardImage("assets/img/arbol.jpeg"),
-          CardImage("assets/img/montaña.jpeg"),
-          CardImage("assets/img/muelle.jpeg"),
-          CardImage("assets/img/rio.jpeg"),
-          CardImage("assets/img/selva.jpeg"),
-        ],
-      ),
-    );
+        children: places.map((place) {
+          return GestureDetector(
+              onTap: () {
+                userBloc!.placeSelectedSink.add(place);
+              },
+              child: CardImageWithFabIcon(
+                  pathImage: place.urlImage,
+                  height: 200.0,
+                  width: 300.0,
+                  onPressedFabIcon: () {
+                    setLiked(place);
+                  },
+                  iconData: place.liked ? iconDataLiked : iconDataLike,
+                  internet: true));
+        }).toList());
   }
 }

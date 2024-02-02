@@ -17,10 +17,7 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      throw UnsupportedError(
-        'DefaultFirebaseOptions have not been configured for web - '
-        'you can reconfigure this by running the FlutterFire CLI again.',
-      );
+      return web;
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -28,10 +25,7 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        throw UnsupportedError(
-          'DefaultFirebaseOptions have not been configured for macos - '
-          'you can reconfigure this by running the FlutterFire CLI again.',
-        );
+        return macos;
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -49,9 +43,19 @@ class DefaultFirebaseOptions {
     }
   }
 
+  static const FirebaseOptions web = FirebaseOptions(
+    apiKey: 'AIzaSyCRN4lKzTAzyc2R4750sNbQD9dswwXbx6A',
+    appId: '1:522793099309:web:52f283a4864d08eb0498a4',
+    messagingSenderId: '522793099309',
+    projectId: 'applicationtripsflutter',
+    authDomain: 'applicationtripsflutter.firebaseapp.com',
+    storageBucket: 'applicationtripsflutter.appspot.com',
+    measurementId: 'G-YYSL5GV928',
+  );
+
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDAofBvXw4_CdeQ4qQ9I7HpwLZZvcQV8jg',
-    appId: '1:522793099309:android:ca9d6d7a8558362c0498a4',
+    appId: '1:522793099309:android:a4bb979bb87956c50498a4',
     messagingSenderId: '522793099309',
     projectId: 'applicationtripsflutter',
     storageBucket: 'applicationtripsflutter.appspot.com',
@@ -59,10 +63,19 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions ios = FirebaseOptions(
     apiKey: 'AIzaSyDRrueTVrS42Gvp9J5rAfLX8T-X_BgbRPY',
-    appId: '1:522793099309:ios:6c92b135cefdd9aa0498a4',
+    appId: '1:522793099309:ios:431b162d5631225a0498a4',
     messagingSenderId: '522793099309',
     projectId: 'applicationtripsflutter',
     storageBucket: 'applicationtripsflutter.appspot.com',
     iosBundleId: 'com.example.application',
+  );
+
+  static const FirebaseOptions macos = FirebaseOptions(
+    apiKey: 'AIzaSyDRrueTVrS42Gvp9J5rAfLX8T-X_BgbRPY',
+    appId: '1:522793099309:ios:e3fd929a1fffbb0c0498a4',
+    messagingSenderId: '522793099309',
+    projectId: 'applicationtripsflutter',
+    storageBucket: 'applicationtripsflutter.appspot.com',
+    iosBundleId: 'com.example.application.RunnerTests',
   );
 }
